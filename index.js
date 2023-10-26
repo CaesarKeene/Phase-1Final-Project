@@ -64,3 +64,14 @@ const fetchSportsNews = async () => {
     displayNews();
 }
 
+const fetchQueryNews = async () => {
+    const response = await fetch(SEARCH_NEWS+newsQuery.value+"&apikey="+API_KEY);
+    newsdataArray = [];
+    if(response.status >= 200 && response.status < 300) {
+        const myJson = await response.json();
+    } else {
+        //handle errors
+    }
+
+    displayNews();
+}
