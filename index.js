@@ -43,7 +43,7 @@ const fetchGeneralNews = async () => {
 
     } else {
         //handle errors
-
+        console.log(response.status, response.statusText);
     }
 
     displayNews();
@@ -58,7 +58,7 @@ const fetchSportsNews = async () => {
 
     } else {
         //handle errors
-
+        console.log(response.status, response.statusText);
     }
 
     displayNews();
@@ -71,6 +71,7 @@ const fetchQueryNews = async () => {
         const myJson = await response.json();
     } else {
         //handle errors
+        console.log(response.status, response.statusText);
     }
 
     displayNews();
