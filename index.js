@@ -78,3 +78,56 @@ const fetchQueryNews = async () => {
 
     displayNews();
 }
+
+function displayNews () {
+
+    newsdetails.innerHTML = "";
+
+    if(newsdataArray.length == 0) {
+        newsdetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+
+    newsdataArray.forEach(news => {
+
+        let col = document.createElement('div');
+        col.className="col-sm-12 col-md-4 col-lg-3 p-2 card";
+
+        let card = document.createElement('div');
+        card.classname = "p-2";
+
+        let image = document.createElement('img');
+        image.setAttribute("height","matchparnt");
+        image.setAttribute("width","100%");
+        image.src=news.urlToImage;
+
+        let cardBody = document.createElement('div');
+
+        let newsHeading = document.createElement('h5');
+        newsHeading.className = "card-title";
+        newsHeading.innerHTML = news.title; 
+        
+    
+        let description = document.createElement('p');
+        description.className = "text-muted";
+        description.innerhtml = news.description;
+
+        let link = document.createElement('a');
+        link.classname = "btn btn-primary";
+        link.setAttribute("target","_blank");
+        link.href = news.url;
+        link.innerHTML="Read More"
+
+        cardBody.appendChild(newsHeading);
+        cardBody.appendChild(description);
+        cardBody.appendChild(link);
+
+        card.appendChild(image);
+        card.appendChild(cardBody);
+
+        col.appendChild(card);
+
+        newsdetails.appendChild(col);
+
+    });
+}
