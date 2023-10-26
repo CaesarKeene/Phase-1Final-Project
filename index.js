@@ -49,5 +49,18 @@ const fetchGeneralNews = async () => {
     displayNews();
 }
 
+const fetchSportsNews = async () => {
+    const response = await fetch (SPORTS_NEWS+API_KEY);
+    newsdataArray = [];
+    if(response.status >=200 && response.status < 300) {
+        const myJson = await response.json();
+        newsdataArray = myJson;
 
+    } else {
+        //handle errors
+
+    }
+
+    displayNews();
+}
 
