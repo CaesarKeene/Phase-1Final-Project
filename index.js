@@ -39,7 +39,7 @@ const fetchGeneralNews = async () => {
     newsdataArray = [];
     if(response.status >=200 && response.status < 300) {
         const myJson = await response.json();
-        newsdataArray = myJson;
+        newsdataArray = myJson.articles;
 
     } else {
         //handle errors
@@ -54,7 +54,8 @@ const fetchSportsNews = async () => {
     newsdataArray = [];
     if(response.status >=200 && response.status < 300) {
         const myJson = await response.json();
-        newsdataArray = myJson;
+        console.log(myJson); 
+        newsdataArray = myJson.articles;
 
     } else {
         //handle errors
@@ -69,6 +70,7 @@ const fetchQueryNews = async () => {
     newsdataArray = [];
     if(response.status >= 200 && response.status < 300) {
         const myJson = await response.json();
+        newsdataArray = myJson.articles;
     } else {
         //handle errors
         console.log(response.status, response.statusText);
