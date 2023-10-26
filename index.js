@@ -8,6 +8,11 @@ const newsQuery = document.getElementById("newsQuery");
 const newsType = document.getElementById("newsType");
 const newsdetails = document.getElementById("newsdetails");
 
+
+
+//Array 
+let newsdataArray = [];
+
 // Defining APIs 
 
 const API_KEY = "77024c19bab14cb98a48bd564d0aa020";
@@ -18,14 +23,31 @@ const SEARCH_NEWS = "https://newsapi.org/v2/everything?q="
 
 
 generalButton.addEventListener("click",function(){
-
     fetchGeneralNews();
 });
 
 sportsButton.addEventListener("click",function(){
-
+    fetchSportsNews();
 });
 
 searchButton.addEventListener("click",function(){
-
+    fetchQueryNews();
 });
+
+const fetchGeneralNews = async () => {
+    const response = await fetch (GENERAL_NEWS+API_KEY);
+    newsdataArray = [];
+    if(response.status >=200 && response.status < 300) {
+        const myJson = await response.json();
+        newsdataArray = myJson;
+
+    } else {
+        //handle errors
+
+    }
+
+    displayNews();
+}
+
+
+
