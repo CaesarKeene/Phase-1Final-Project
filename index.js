@@ -99,7 +99,7 @@ function displayNews () {
         card.classname = "p-2";
 
         let image = document.createElement('img');
-        image.setAttribute("height","matchparnt");
+        image.setAttribute("height","matchparent");
         image.setAttribute("width","100%");
         image.src=news.urlToImage;
 
@@ -115,7 +115,7 @@ function displayNews () {
         description.innerHTML = news.description;
 
         let link = document.createElement('a');
-        link.classname = "btn btn-primary";
+        link.className = "btn btn-primary";
         link.setAttribute("target","_blank");
         link.href = news.url;
         link.innerHTML="Read More";
