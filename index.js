@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 // Declaring variables 
 
 const generalButton = document.getElementById("general");
@@ -110,13 +112,13 @@ function displayNews () {
     
         let description = document.createElement('p');
         description.className = "text-muted";
-        description.innerhtml = news.description;
+        description.innerHTML = news.description;
 
         let link = document.createElement('a');
         link.classname = "btn btn-primary";
         link.setAttribute("target","_blank");
         link.href = news.url;
-        link.innerHTML="Read More"
+        link.innerHTML="Read More";
 
         cardBody.appendChild(newsHeading);
         cardBody.appendChild(description);
@@ -130,4 +132,6 @@ function displayNews () {
         newsdetails.appendChild(col);
 
     });
-}
+ }
+
+});

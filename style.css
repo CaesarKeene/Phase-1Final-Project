@@ -1,0 +1,47 @@
+.navbar {
+    background-color: #fff;
+    border: none;
+    padding: 10px 0;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF5733;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    color: #333;
+  }
+  
+  /* Style for the search input and button */
+  #newsQuery {
+    border: 1px solid #FF5733;
+    padding: 5px 10px;
+    color: #333;
+  }
+  
+  #searchButton {
+    background-color: #FF5733;
+    color: #fff;
+    border: none;
+  }
+  
+  /* styles for the rows */
+  .row {
+    margin-top: 20px;
+  }
+  
+  /* styles for the footer */
+  .navbar-light {
+    background-color: #fff;
+    border: none;
+  }
+  
+  .navbar-light .navbar-brand {
+    color: #333;
+  }
