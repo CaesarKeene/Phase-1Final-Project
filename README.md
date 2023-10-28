@@ -1,6 +1,5 @@
-# Phase-1Final-Project
+# Phase-1 Final-Project
 This is a simple web application for displaying news articles. It allows users to retrieve news articles from two categories with the use of a News API.
-
 ## Technologies used 
 1. HTML
 2. CSS
