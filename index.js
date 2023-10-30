@@ -26,7 +26,7 @@ const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 window.onload = function() {
     newsType.innerHTML="<h4>Headlines</h4>";
     fetchHeadlines();
-}; 
+};
 
 // Event listeners for the specific buttons
 generalButton.addEventListener("click",function(){
