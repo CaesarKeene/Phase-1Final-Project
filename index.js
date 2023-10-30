@@ -12,7 +12,7 @@ const newsdetails = document.getElementById("newsdetails");
 
 
 
-//Array 
+// Array that stores the news data 
 let newsdataArray = [];
 
 // Defining APIs 
@@ -21,30 +21,54 @@ const API_KEY = "77024c19bab14cb98a48bd564d0aa020";
 const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" 
 const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey="
 const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey="
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q="
+const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
+window.onload = function() {
+    newsType.innerHTML="<h4>Headlines</h4>";
+    fetchHeadlines();
+}; 
 
+// Event listeners for the specific buttons
 generalButton.addEventListener("click",function(){
+    newsType.innerHTML="<h4>General News</h4>";
     fetchGeneralNews();
 });
 
 sportsButton.addEventListener("click",function(){
+    newsType.innerHTML="<h4>Sports</h4>";
     fetchSportsNews();
 });
 
 searchButton.addEventListener("click",function(){
+    newsType.innerHTML="<h4>Search : "+newsQuery.value+"</h4>";
     fetchQueryNews();
 });
 
-const fetchGeneralNews = async () => {
-    const response = await fetch (GENERAL_NEWS+API_KEY);
+const fetchHeadlines = async () => {
+    const response = await fetch (HEADLINES_NEWS+API_KEY);
     newsdataArray = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 300) {   // use of http status codes 
         const myJson = await response.json();
         newsdataArray = myJson.articles;
 
     } else {
-        //handle errors
+        //handling of  errors
+        console.log(response.status, response.statusText);
+    }
+
+    displayNews();
+}
+
+
+const fetchGeneralNews = async () => {
+    const response = await fetch (GENERAL_NEWS+API_KEY);
+    newsdataArray = [];
+    if(response.status >=200 && response.status < 300) {   
+        const myJson = await response.json();
+        newsdataArray = myJson.articles;
+
+    } else {
+        //handling of  errors
         console.log(response.status, response.statusText);
     }
 
@@ -60,7 +84,7 @@ const fetchSportsNews = async () => {
         newsdataArray = myJson.articles;
 
     } else {
-        //handle errors
+        //handle of errors
         console.log(response.status, response.statusText);
     }
 
