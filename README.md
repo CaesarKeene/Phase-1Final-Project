@@ -20,5 +20,7 @@ Clone the repository to your local machine then open the index.html file in your
 * Show at least two different news categories through filters 
 * Create a feature that allows a user to search for news with keywords
 
+(note: The API only allows requests via the browser when testing from the localhost, which is why no deployment has been made.)
+
 # Author & license
 'CaesarKeene'
